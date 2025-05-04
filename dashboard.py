@@ -189,6 +189,11 @@ if section == "Overview":
 
 elif section == "Trends":
     st.title("📈 Trends Over Time")
+    
+    st.caption(
+        "_Note: For presentation purposes, the terms **violation** and **victim** are used interchangeably throughout the dashboard, except in the **Trends** section where the distinction is preserved._"
+    )
+    
     chart_choice = st.radio("Select Metric", ["Violations", "Victims"], horizontal=True)
     time_granularity = st.radio("Select Time Unit", ["Yearly", "Monthly"], horizontal=True)
 
@@ -235,6 +240,11 @@ elif section == "Trends":
 
 elif section == "Violation Patterns":
     st.title("📌 Violation Patterns")
+    
+    st.caption(
+        "_Note: For presentation purposes, the terms **violation** and **victim** are used interchangeably throughout the dashboard, except in the **Trends** section where the distinction is preserved._"
+    )
+    
     st.markdown("### Top 5 Violation Types Over Time")
 
     # Top 5 Violation Types overall (for clarity)
@@ -271,7 +281,7 @@ elif section == "Violation Patterns":
 
 
     st.markdown("### Top Violation Types by Attacker Group")
-
+    
     # Top attackers and violations
     top_attackers = filtered_data["Attackers"].value_counts().nlargest(6).index
     top_violations = filtered_data["Violation_Nature"].value_counts().nlargest(6).index
@@ -365,8 +375,14 @@ elif section == "Violation Patterns":
 
 
 
+
 elif section == "Cross Analysis":
     st.title("🔍 Cross Analysis")
+    
+    st.caption(
+        "_Note: For presentation purposes, the terms **violation** and **victim** are used interchangeably throughout the dashboard, except in the **Trends** section where the distinction is preserved._"
+    )
+    
     st.markdown("### Top Violation Types by Country")
 
     # Top 10 countries and violations
@@ -501,6 +517,10 @@ elif section == "Cross Analysis":
 elif section == "Governance":
     st.title("🏛️ Governance & Indices")    
 
+    st.caption(
+        "_Note: For presentation purposes, the terms **violation** and **victim** are used interchangeably throughout the dashboard, except in the **Trends** section where the distinction is preserved._"
+    )
+
     import plotly.graph_objects as go
     from plotly.subplots import make_subplots
 
@@ -611,6 +631,11 @@ elif section == "Governance":
 
 elif section == "Topics & Themes":
     st.title("🧠 NLP: Topics & Themes")
+    
+    st.caption(
+        "_Note: For presentation purposes, the terms **violation** and **victim** are used interchangeably throughout the dashboard, except in the **Trends** section where the distinction is preserved._"
+    )    
+    
     st.markdown("### Interactive Topic Lexicon")
 
     # Load top words from CSV
@@ -709,6 +734,11 @@ elif section == "Topics & Themes":
 
 elif section == "Raw Data":
     st.title("📄 Raw Data Table")
+    
+    st.caption(
+        "_Note: For presentation purposes, the terms **violation** and **victim** are used interchangeably throughout the dashboard, except in the **Trends** section where the distinction is preserved._"
+    )    
+    
     st.dataframe(filtered_data)
     csv = filtered_data.to_csv(index=False).encode('utf-8')
     st.download_button("Download CSV", csv, "filtered_data.csv", "text/csv")
