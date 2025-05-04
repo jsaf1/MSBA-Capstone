@@ -74,13 +74,8 @@ if section == "Overview":
     st.title("📊 SKF Violations Dashboard")
     st.markdown("### Key Metrics")
     
-    st.markdown(
-        """
-        <div style="font-size: 0.85em; color: #AAAAAA; margin-top: -10px; margin-bottom: 10px;">
-            <em>Note:</em> <code>Reported Violations</code> refers to unique <code>Violation_ID</code>s. All other metrics and charts reflect individual victims.
-        </div>
-        """,
-        unsafe_allow_html=True
+    st.caption(
+        "_Note: For presentation purposes, the terms **violation** and **victim** are used interchangeably throughout the dashboard, except in the **Trends** section where the distinction is preserved._"
     )
 
 
