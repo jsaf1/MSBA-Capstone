@@ -128,14 +128,14 @@ if section == "Overview":
     )
     fig_violations.update_layout(yaxis=dict(autorange="reversed"), xaxis_title=None, yaxis_title=None)
 
-    # Top 5 Countries as pie
+    # Top Countries as pie
     top_countries = filtered_data["Country"].value_counts().nlargest(5).reset_index()
     top_countries.columns = ["Country", "Count"]
     fig_countries = px.pie(
         top_countries,
         names="Country",
         values="Count",
-        title="Top 5 Affected Countries",
+        title="Affected Countries",
         hole=0.4,
         color_discrete_sequence=custom_palette  # Use your defined palette
     )
